@@ -25,7 +25,6 @@ BuildRequires:	perl(Crypt::CBC) >= 2.14
 BuildRequires:	perl(Data::Dumper) >= 2.101
 BuildRequires:	perl-libapreq2 >= 2.05
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Apache2::SiteControl is a set of perl object-oriented classes that
