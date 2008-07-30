@@ -1,7 +1,7 @@
 %define module Apache2-SiteControl
 %define name	perl-%{module}
 %define version 1.05
-%define release %mkrel 2
+%define release %mkrel 4
 
 Name:		%{name}
 Version:	%{version}
