@@ -1,16 +1,16 @@
-%define module Apache2-SiteControl
-%define name	perl-%{module}
-%define version 1.05
-%define release %mkrel 4
+%define upstream_name    Apache2-SiteControl
+%define upstream_version 1.05
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl web site authentication/authorization system
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/Apache2/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Apache2/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
@@ -25,7 +25,7 @@ BuildRequires:	perl(Crypt::CBC) >= 2.14
 BuildRequires:	perl(Data::Dumper) >= 2.101
 BuildRequires:	perl-libapreq2 >= 2.05
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Apache2::SiteControl is a set of perl object-oriented classes that
@@ -42,7 +42,7 @@ as the component is processed. SiteControl attempts to make that as easy as
 possible.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -63,6 +63,3 @@ rm -rf %{buildroot}
 %doc Changes README* docs/apache sample
 %{perl_vendorlib}/Apache2
 %{_mandir}/*/*
-
-
-
