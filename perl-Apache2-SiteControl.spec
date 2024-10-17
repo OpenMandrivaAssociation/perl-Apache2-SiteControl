@@ -8,7 +8,7 @@ Release:	5
 Summary:	Perl web site authentication/authorization system
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Apache2/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
